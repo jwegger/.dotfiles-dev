@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+usage() {
+    echo "Usage: $0 [branch]" >&2
+    exit 2
+}
+
+[ "$#" -le 1 ] || usage
+
+branch=${1:-$(git branch --show-current)}
+
+if [ -z "$branch" ]; then
+    echo "Cannot determine the current branch; specify a branch name." >&2
+    exit 1
+fi
+
+case "$branch" in
+    merged/*)
+        echo "Branch is already in the merged namespace: $branch" >&2
+        exit 1
+        ;;
+esac
+
+git branch -m "$branch" "merged/$branch"
