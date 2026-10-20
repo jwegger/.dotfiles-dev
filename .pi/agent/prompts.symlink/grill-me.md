@@ -4,7 +4,9 @@ argument-hint: "<objective>"
 ---
 Objective: $ARGUMENTS
 
-Interview me relentlessly about every aspect of the objective until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. 
+Interview me relentlessly about every aspect of the objective until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one.
+
+Ask about only one topic, or a small set of closely related topics, at a time. Do not move on to the next topic until we have explicitly agreed on a shared understanding of the current one.
 
 If a question can be answered by exploring the codebase, explore the codebase instead.
 
